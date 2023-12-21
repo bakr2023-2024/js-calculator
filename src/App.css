@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Digital-7";
+  src: url("./digital_7/digital-7.ttf");
+}
+:root {
+  --cell-w: 25%;
+  --cell-h: 20%;
+}
+* {
+  box-sizing: border-box !important;
+  margin: 0 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#container {
+  width: 40%;
+  height: 90%;
+  padding: 0.5rem;
+  background-color: black;
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px 0 black;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#displayScreen {
+  height: 20%;
+  background-color: black;
+  color: white;
+  font-family: "Digital-7";
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-end;
+}
+#formula {
+  color: orange;
+  font-size: 1.5rem;
+  text-align: right;
+}
+#display {
+  font-size: 1.75rem;
+  text-align: right;
+}
+#buttons {
+  display: flex;
+  font-family: "Share Tech Mono";
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+  align-items: flex-start;
+}
+.cell {
+  width: var(--cell-w);
   color: white;
+  height: var(--cell-h);
+  border: 1px solid black;
+  transition: all 0.1s;
 }
-
-.App-link {
-  color: #61dafb;
+.cell:hover {
+  border: 1px solid white;
+  color: black;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.wideCell {
+  width: calc(var(--cell-w) * 2);
+}
+.tallCell {
+  height: calc(var(--cell-h) * 2);
+}
+.translateUp {
+  transform: translateY(-100%);
+}
+#clear {
+  background-color: red;
+}
+#equals {
+  background-color: blue;
+}
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#zero,
+#decimal {
+  background-color: darkslategrey;
+}
+#add,
+#subtract,
+#divide,
+#multiply {
+  background-color: rgb(96, 94, 94);
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 0.7rem;
   }
 }
